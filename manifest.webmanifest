@@ -1,0 +1,28 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "Enchantment of the Grace",
+  "short_name": "Enchantment of the Grace",
+  "scope": "./",
+  "display": "standalone",
+  "start_url": "./",
+  "background_color": "black",
+  "theme_color": "black",
+  "description": "For the Good",
+  "orientation": "any",
+  "prefer_related_applications": false,
+  "icons": [
+  {
+    "src": "./asset/icon/192.png",
+    "type": "image/png",
+    "sizes": "192x192",
+    "purpose": "any maskable"
+  },
+  {
+    "src": "./asset/icon/512.png",
+    "type": "image/png",
+    "sizes": "512x512",
+    "purpose": "any maskable"
+  }
+  ]
+}
