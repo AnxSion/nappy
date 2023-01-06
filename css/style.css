@@ -8,8 +8,30 @@ body{
     align-items: center;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     margin: 0;
-    color: white;
+    color: black;
+    background-color: white;
+    font-size: 16px;
 }
+
+h1{
+    font-size: 3rem;
+    margin: 34px;
+}
+h2{
+    font-size: 2rem;
+    margin: 32px;
+}
+main{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 128px;
+}
+
 section{
     width: 90%;
     display: flex;
@@ -19,7 +41,7 @@ section{
 }
 
 a{
-    color: white;
+    color: black;
     text-decoration: underline;
 }
 
@@ -28,18 +50,6 @@ img{
     height: fit-content;
     min-width: 100%;
     min-height: 100%;
-}
-
-main{
-    background-color: black;
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 128px;
 }
 
 .productContainer{
@@ -62,7 +72,6 @@ main{
     width: 100%;
     height: 100%;
     opacity: 100%;
-    background-color: hsla(0, 0%, 50%, 0.25);
     transition: 0.3s;
     filter: blur(0);
 }
@@ -80,7 +89,7 @@ main{
     margin: 0;
 }
 .productContainer a:hover img{
-    opacity: 50%;
+    opacity: 30%;
     filter: blur(4px);
     background-color: hsla(0, 0%, 50%, 0);
 }
@@ -113,6 +122,22 @@ footer p{
     margin: 5px;
 }
 
+
+.orderButton{
+    background-color: black;
+    color: white;
+    width: 128px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+    border-radius: 16px;
+}
+
+.justifyText{
+    text-align: justify;
+}
 @media screen and (min-width:769px) {
     .productContainer{
         grid-template-columns: 25% 25% 25% 25%;
