@@ -63,6 +63,7 @@
 
             <section id="productOrder">
             </section>
+            <br>
         </section>
 
         <footer style="text-align: center;">
@@ -79,18 +80,19 @@
         }  
     });
 
-    let numberofshoes = 9;
+    let numberofshoes = 10;
 
     let productData=[
-        ["Sneakers 1", "shoes-0.jpg", "399", "399", "https://wa.me/p/8583596851713018/919832909233"],
-        ["Sneakers 2", "shoes-1.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Jordan 4 Retro", "shoes-0.jpg", "399", "399", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Nike Zoom 3", "shoes-1.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
         ["Sneakers 3", "shoes-2.jpg", "399", "399", "https://wa.me/p/8583596851713018/919832909233"],
         ["Sneakers 4", "shoes-3.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
         ["Sneakers 5", "shoes-4.jpg", "399", "399", "https://wa.me/p/8583596851713018/919832909233"],
         ["Sneakers 6", "shoes-5.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
         ["Sneakers 7", "shoes-6.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
         ["Sneakers 8", "shoes-7.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
-        ["Sneakers 9", "shoes-8.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"]
+        ["Sneakers 9", "shoes-8.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Nike Zoom X", "shoes-9.jpg", "2150", "2150", "https://wa.me/p/8583596851713018/919832909233"]
     ]
 
     for(i=0; i<numberofshoes;i++){
@@ -136,7 +138,7 @@
                     document.getElementById('productPrice').innerHTML = "&#8377; " + productData[productid][2];
                 }
                 else{
-                    document.getElementById('productPrice').innerHTML = "<s style=\"color:green\;font-size:18px;\">&#8377; " + productData[productid][2] +"</s><br>&#8377; " + productData[productid][3];
+                    document.getElementById('productPrice').innerHTML = "<s style=\"color:green\;font-size:24px;\">&#8377; " + productData[productid][2] +"</s><br>&#8377; " + productData[productid][3];
                 }
                 document.getElementById('productOrder').innerHTML = "<a href=\'"+productData[productid][4]+"\' target=\'_blank\'>Order</img>";
                 document.getElementById('productMain').style.display="none";
