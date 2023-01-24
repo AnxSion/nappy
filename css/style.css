@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 @font-face {
     font-family: 'Gilmer';
     src: url(../asset/font/GilmerRegular.otf);
+}
+@font-face {
+    font-family: 'Creation';
+    src: url(../asset/font/Creation.otf);
 }
 body{
     font-family: 'Gilmer';
@@ -31,9 +33,13 @@ main{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding-bottom: 128px;
+}
+
+#productMain{
+    display: flex;
 }
 
 section{
@@ -47,6 +53,7 @@ section{
 a{
     color: black;
     text-decoration: underline;
+    
 }
 
 img{
@@ -57,50 +64,29 @@ img{
 }
 
 .productContainer{
+    width: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
     justify-content: space-evenly;
     align-items: center;
     column-gap: 12px;
     row-gap: 12px;
+    cursor: pointer;
 }
-.productContainer a{
-    position: relative;
+
+.productContainer section{
     width: 100%;
     height: 100%;
+    transition: 0.3s;
+}
+.productContainer section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
     transition: 0.3s;
 }
 
-
-.productContainer a img{
-    width: 100%;
-    height: 100%;
-    opacity: 100%;
-    transition: 0.3s;
-    filter: blur(0);
-}
-.productContainer a p{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0%;
-    transition: 0.3s;
-    margin: 0;
-}
-.productContainer a:hover img{
-    opacity: 30%;
-    filter: blur(4px);
-    background-color: hsla(0, 0%, 50%, 0);
-}
-.productContainer a:hover p{
-    opacity: 100%;
-    
-}
 .productDisplay{
     display: flex;
     width: 50%;
@@ -111,6 +97,31 @@ img{
     width: 100%;
     height: 100%;
     background-color: hsla(0, 0%, 50%, 0);
+}
+
+#productData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#productData a{
+    background-color: black;
+    color: white;
+    padding: 8px;
+    min-width: 128px;
+    text-align: center;
+    text-decoration: none;
+}
+#productImage{ 
+    width: 50%;
+    height: 50%;
+    background-color: hsla(0, 0%, 50%, 0);
+}
+#productImage img{
+    object-fit: cover;
+    aspect-ratio: 1/1;
 }
 
 footer{
@@ -126,22 +137,26 @@ footer p{
     margin: 5px;
 }
 
-
-.orderButton{
-    background-color: black;
-    color: white;
-    width: 128px;
-    padding: 8px;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    display: flex;
-    border-radius: 16px;
+.loadingScreen{
+    animation: loading 1s normal;
 }
 
-.justifyText{
-    text-align: justify;
+@keyframes loading{
+    0%{
+        top: 100%;
+    }
+    40%{
+        top: 0%;
+    }
+    50%{
+        top: 0%;
+    }
+    100%{
+        top: -100%;
+    }
 }
+
+
 @media screen and (min-width:769px) {
     .productContainer{
         grid-template-columns: 25% 25% 25% 25%;
