@@ -23,7 +23,7 @@
 	<meta property="twitter:url" content="https://anxsion.github.io/nappy" />
 	<meta name="twitter:title" content="Grace" />
 	<meta name="twitter:description" content="Nappy Minati" />
-	<meta name="twitter:image" content="asset/procucts/graceImg.png" />
+	<meta name="twitter:image" content="asset/procucts/favicon.png" />
 	<link rel="stylesheet" href="./css/style.css" type="text/css" />
 	<link rel="preload" href="./css/style.css" as="style" />
 	<link rel="shortcut icon" href="./asset/icon/favicon.png" type="image/x-icon" />
@@ -44,8 +44,7 @@
             <br>
             <h2 style="text-align: center;">Sneakers</h2>
             <br>
-            <div id="productContainer" class="productContainer">
-            </div>
+            <div id="productContainer" class="productContainer"></div>
             <br>
         </section>
         
@@ -57,7 +56,7 @@
 
             <section id="productImage">
             </section>
-    
+
             <section>
                 <h2 id="productPrice"></h2>
             </section>
@@ -83,15 +82,15 @@
     let numberofshoes = 9;
 
     let productData=[
-        ["Sneakers 1", "shoes-0.jpg", "399", "https://wa.me/p/8583596851713018/919832909233"],
-        ["Sneakers 2", "shoes-1.jpg", "399", "https://wa.me/p/8583596851713018/919832909233"],
-        ["Sneakers 3", "shoes-2.jpg", "399", "https://wa.me/p/8583596851713018/919832909233"],
-        ["Sneakers 4", "shoes-3.jpg", "399", "https://wa.me/p/8583596851713018/919832909233"],
-        ["Sneakers 5", "shoes-4.jpg", "399", "https://wa.me/p/8583596851713018/919832909233"],
-        ["Sneakers 6", "shoes-5.jpg", "399", "https://wa.me/p/8583596851713018/919832909233"],
-        ["Sneakers 7", "shoes-6.jpg", "399", "https://wa.me/p/8583596851713018/919832909233"],
-        ["Sneakers 8", "shoes-7.jpg", "399", "https://wa.me/p/8583596851713018/919832909233"],
-        ["Sneakers 9", "shoes-8.jpg", "399", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Sneakers 1", "shoes-0.jpg", "399", "399", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Sneakers 2", "shoes-1.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Sneakers 3", "shoes-2.jpg", "399", "399", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Sneakers 4", "shoes-3.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Sneakers 5", "shoes-4.jpg", "399", "399", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Sneakers 6", "shoes-5.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Sneakers 7", "shoes-6.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Sneakers 8", "shoes-7.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"],
+        ["Sneakers 9", "shoes-8.jpg", "399", "299", "https://wa.me/p/8583596851713018/919832909233"]
     ]
 
     for(i=0; i<numberofshoes;i++){
@@ -129,17 +128,22 @@
         else if (productValue == "shoes"){
             {
                 history.pushState({}, "Nappy Minati", "?category=shoes&id="+productid);
-                document.title=productData[productid][0];
+                document.title= productData[productid][0];
+
                 document.getElementById('productName').innerHTML = productData[productid][0];
                 document.getElementById('productImage').innerHTML = "<img src=\'./asset/products/"+productData[productid][1]+"\'></img>";
-                document.getElementById('productPrice').innerHTML = "&#8377; " + productData[productid][2];
-                document.getElementById('productOrder').innerHTML = "<a href=\'"+productData[productid][3]+"\' target=\'_blank\'>Order</img>";
+                if(productData[productid][2] == productData[productid][3]){
+                    document.getElementById('productPrice').innerHTML = "&#8377; " + productData[productid][2];
+                }
+                else{
+                    document.getElementById('productPrice').innerHTML = "<s style=\"color:green\">&#8377; " + productData[productid][2] +"</s><br>&#8377; " + productData[productid][3];
+                }
+                document.getElementById('productOrder').innerHTML = "<a href=\'"+productData[productid][4]+"\' target=\'_blank\'>Order</img>";
                 document.getElementById('productMain').style.display="none";
                 document.getElementById('productData').style.display="flex";
                 document.getElementById('productMain').style.opacity="0%";
                 document.getElementById('productData').style.opacity="100%";
-            }
-            
+            }   
         }
     }
 
